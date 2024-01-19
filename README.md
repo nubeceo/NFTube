@@ -11,23 +11,26 @@ Welcome to NFTube, a stunning YouTube clone crafted with Vite, React, React Rout
 ## Getting Started
 
 1. **Clone the Repository:**
-    ```bash
-    git clone https://github.com/nubeceo/NFTube.git
-    ```
+
+   ```bash
+   git clone https://github.com/nubeceo/NFTube.git
+   ```
 
 2. **Install Dependencies:**
-    ```bash
-    npm install
-    ```
+
+   ```bash
+   npm install
+   ```
 
 3. **Configure API Key:**
+
    - Acquire a YouTube Data API key.
    - Update the API key in your project configuration.
 
 4. **Run the Application:**
-    ```bash
-    npm start
-    ```
+   ```bash
+   npm start
+   ```
 
 ## Technologies Used
 
@@ -46,3 +49,4 @@ Welcome to NFTube, a stunning YouTube clone crafted with Vite, React, React Rout
 |-- public
 |-- ...
 
+```
