@@ -12,7 +12,7 @@ Welcome to NFTube, a stunning YouTube clone crafted with Vite, React, React Rout
 
 1. **Clone the Repository:**
     ```bash
-    git clone https://github.com/your-username/NFTube.git
+    git clone https://github.com/nubeceo/NFTube.git
     ```
 
 2. **Install Dependencies:**
