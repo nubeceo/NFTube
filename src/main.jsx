@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
-import Home from './Components/HomeSection/Home.jsx'
+import { Home, } from './Components/Exporter.js'
 
 
 
@@ -11,8 +11,8 @@ import Home from './Components/HomeSection/Home.jsx'
 // Creating routes here
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path='/' element={<App/>} >
-      <Route path='Home' element={<Home/>}/>
+    <Route path='/' element={<App />} >
+      <Route path='/' element={<Home />} />
     </Route>
   )
 )
@@ -20,6 +20,6 @@ const router = createBrowserRouter(
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router}/>
-  </React.StrictMode>,
+    <RouterProvider router={router} />
+  </React.StrictMode>
 )
