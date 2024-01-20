@@ -1,26 +1,27 @@
-import React, { createElement, useState } from 'react'
+import React, { createElement, useState, useContext } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { FaHome, FaUserAstronaut, FaHistory  } from "react-icons/fa";
+import { FaHome, FaUserAstronaut, FaHistory } from "react-icons/fa";
 import { RiWechatChannelsLine } from "react-icons/ri";
 import { TbCategory } from "react-icons/tb";
+import UserContext from '../../Context/UserContext';
 
 function SideBar() {
 
-    const menu=[
-        {name:"Home", link:'/', icon: FaHome },
-        {name:"User", link:'/', icon: FaUserAstronaut },
-        {name:"History", link:'/', icon: FaHistory  },
-        {name:"Top Channels", link:'/', icon: RiWechatChannelsLine },
-        {name:"Explore", link:'/', icon: TbCategory },
-        
+    const menu = [
+        { name: "Home", link: '/', icon: FaHome },
+        { name: "User", link: '/', icon: FaUserAstronaut },
+        { name: "History", link: '/', icon: FaHistory },
+        { name: "Top Channels", link: '/', icon: RiWechatChannelsLine },
+        { name: "Explore", link: '/', icon: TbCategory },
+
     ];
 
-    const [open, SetOpen] = useState(true);
+    const { SetOpen, Open } = useContext(UserContext);
 
 
     return (
-        <div className='bg-black text-white justify-center lg:justify-start w-full h-full p-6 flex  flex-row lg:flex-col '>
+        <div className={`bg-black text-white justify-center lg:justify-start w-full h-full p-6 flex  flex-row lg:flex-col `}>
 
             {/* home tab */}
             {/* <div className="p-6 flex items-center justify-start">
@@ -38,10 +39,22 @@ function SideBar() {
 
 
             {
-                menu?.map((menu ,i)=>(
-                    <Link to={menu.link}  key={i} className='flex items-center text-md gap-3.5 font-medium p-2 my-3  hover:bg-gray-900 rounded-md'>
-                        <div>{React.createElement(menu.icon, {size:"20"})}</div>
-                        <h2>{menu.name}</h2>
+                menu?.map((menu, i) => (
+                    <Link to={menu.link} key={i} className={` group  flex items-center text-md gap-3.5 font-medium py-2 px-2 pl-3 my-3  hover:bg-gray-900 rounded-md`}>
+
+                        <div>{React.createElement(menu.icon, { size: "20" })}</div>
+
+                        <h2 
+                        style={{
+                            transitionDelay:`${i+3}00ms`
+                        }}
+                        className={`whitespace-pre duration-500 ${!Open && 'opacity-0 translate-x-28 overflow-hidden'} `}>{menu.name}
+
+                        </h2>
+
+                        <h2 className={` ${Open && "hidden"}   absolute left-48 bg-white font-semibold whitespace-pre text-gray-900 rounded-md drop-shadow-lg px-0 py-0 w-0 overflow-hidden group-hover:px-2 group-hover:py-1 group-hover:left-20 group-hover:duration-300 group-hover:w-fit`}>
+                            {menu.name}
+                        </h2>
                     </Link>
                 ))
             }
