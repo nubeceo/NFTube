@@ -6,8 +6,6 @@ import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } 
 import { Home, } from './Components/Exporter.js'
 
 
-
-
 // Creating routes here
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -16,6 +14,7 @@ const router = createBrowserRouter(
     </Route>
   )
 )
+
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(

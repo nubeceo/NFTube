@@ -17,7 +17,7 @@ function Home() {
 
 
       {/* feed section */}
-      <div className={` border right-0 top-11  h-full w-full lg:w-5/6 ${Open ? 'lg:w-5/6' : 'lg:w-11/12'} duration-500 p-24 lg:p-6`}>
+      <div className={` border right-0 top-11  h-full w-full lg:w-5/6 ${Open ? 'lg:w-5/6' : 'lg:w-custom'}  duration-500 p-24 lg:p-6`}>
 
         <div>lsdjfbjhf</div>
         <div>lsdjfbjhf</div>
