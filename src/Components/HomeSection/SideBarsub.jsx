@@ -3,13 +3,25 @@ import { FaHome, FaUserAstronaut, FaHistory, FaArrowDown, FaAngleDown } from "re
 
 
 
-function SideBarsub({ menu, Open, i, setselectedCategory }) {
+function SideBarsub({ menu, Open, i, setselectedCategory, fetchData }) {
 
     const [menuOpen, SetMenuOpen] = useState(false);
+
+
+
+    // calling setselectedCategory and fetchData  fucntion at a time
+    const functionCallingFucntion = (subRouteName) => {
+        setselectedCategory(subRouteName);
+        fetchData();
+    }
+
+
 
     return (
         <div className='hover:bg-gray-900 rounded-md '>
 
+
+            {/* render the menu option which has sublist */}
             <div className=' group cursor-pointer flex items-center text-md gap-3.5 font-medium  px-2 pl-3 my-3  hover:bg-gray-900 rounded-md'
                 onClick={() => SetMenuOpen(!menuOpen)}
             >
@@ -40,12 +52,17 @@ function SideBarsub({ menu, Open, i, setselectedCategory }) {
                 </h2>
             </div>
 
+
+
+
+
+            {/* render the sidebar menu's : sub lists */}
             <ul className={`cursor-pointer  items-center text-sm gap-3.5 font-medium  px-2 pl-3 my-3  rounded-md overflow-y-auto  ${menuOpen ? 'max-h-40' : 'max-h-0'}  duration-500`}>
                 {menu?.subRoutes?.map((subRoutes, i) => (
                     <li key={subRoutes?.name}
                         className='flex items-center gap-2 py-2 px-8 hover:bg-red-600 rounded-md'
-                        onClick={()=>setselectedCategory(subRoutes?.name)}
-                        >
+                        onClick={() => functionCallingFucntion(subRoutes?.name)}
+                    >
 
                         {/* for icon/profile pic */}
                         {subRoutes?.pic ? (<img src={subRoutes?.pic} className='w-8 h-8 rounded-2xl' />) : (

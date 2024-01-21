@@ -2,11 +2,11 @@ import React, { useContext, useEffect, useState } from 'react'
 import SideBar from './SideBar'
 import UserContext from '../../Context/UserContext';
 import Videos from './Videos';
-import { FetchFromApi } from '../../Utils/FtechFromApi';
+
 
 
 function Home() {
-  
+
   const { SetOpen, Open } = useContext(UserContext);
 
 
@@ -26,23 +26,25 @@ function Home() {
   // importing api
   const API_KEY = import.meta.env.VITE_REACT_APP_YOUTUBE_API_KEY;
 
+  const fetchData = async () => {
+    try {
+      const response = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&q=${selectedCategory}&key=${API_KEY}`);
+      if (!response.ok) {
+        throw new Error('Network request failed');
+      }
+      const result = await response.json();
+      setvideos(result.items);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&q=${selectedCategory}&key=${API_KEY}`);
-        if (!response.ok) {
-          throw new Error('Network request failed');
-        }
-        const result = await response.json();
-        setvideos(result.items);
-      } catch (error) {
-        console.log(error);
-      }
-    };
 
     fetchData();
-  }, []);
+
+  }, [selectedCategory]);
 
 
 
@@ -59,6 +61,7 @@ function Home() {
         <SideBar
           selectedCategory={selectedCategory}
           setselectedCategory={setselectedCategory}
+          fetchData={fetchData}
         />
 
       </div>

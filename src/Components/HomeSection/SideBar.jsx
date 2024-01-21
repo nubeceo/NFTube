@@ -20,8 +20,9 @@ import { BsCurrencyBitcoin } from "react-icons/bs";
 
 
 
-function SideBar( {setselectedCategory, selectedCategory} ) {
-    //  importing open from usercontext
+function SideBar( {setselectedCategory, selectedCategory, fetchData} ) {
+
+    //  importing open from and SetOpen usercontext
     const { SetOpen, Open } = useContext(UserContext);
 
 
@@ -151,9 +152,9 @@ function SideBar( {setselectedCategory, selectedCategory} ) {
             {
                 menu?.map((menu, i) => {
 
-
+                    // rendering menus which have submenus
                     if (menu.subRoutes) {
-                        return <SideBarsub menu={menu} Open={Open} i={i} setselectedCategory={setselectedCategory}  />
+                        return <SideBarsub menu={menu} Open={Open} i={i} setselectedCategory={setselectedCategory} fetchData={fetchData} />
                         // <div className=' group cursor-pointer flex items-center text-md gap-3.5 font-medium py-2 px-2 pl-3 my-3  hover:bg-gray-900 rounded-md '>
 
 
@@ -185,8 +186,10 @@ function SideBar( {setselectedCategory, selectedCategory} ) {
 
                     }
 
+
+                    // rendering menus which doesn't have submenus
                     return (
-                        <Link to={menu.link} key={i} className={` group  flex items-center text-md gap-3.5 font-medium py-2 px-2 pl-3 my-3  hover:bg-gray-900 rounded-md`}>
+                        <Link to={menu.link} key={menu?.name} className={` group  flex items-center text-md gap-3.5 font-medium py-2 px-2 pl-3 my-3  hover:bg-gray-900 rounded-md`}>
 
                             <div>{React.createElement(menu.icon, { size: "20" })}</div>
 
