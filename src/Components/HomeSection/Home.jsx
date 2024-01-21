@@ -44,7 +44,7 @@ function Home() {
             throw new Error('Network request failed');
           }
           const result = await response.json();
-          setvideos(result);
+          setvideos(result.items);
         } catch (error) {
           setError(error);
         } finally {
