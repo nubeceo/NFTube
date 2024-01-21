@@ -1,8 +1,18 @@
 import React from 'react'
 
-const Videos = () => {
+const Videos = ({selectedCategory, videos}) => {
+
+  console.log(videos);
   return (
-    <div>Videos</div>
+    <div>
+
+      {/* selected category */}
+      <div className=''>{selectedCategory} <span className='text-red-600 '>NFTs</span></div>
+
+      
+
+
+    </div>
   )
 }
 

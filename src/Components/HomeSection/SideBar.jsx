@@ -5,10 +5,10 @@ import UserContext from '../../Context/UserContext';
 import axios from 'axios';
 import SideBarsub from './SideBarsub';
 
-import { FaHome, FaUserAstronaut, FaHistory, FaArrowDown, FaAngleDown,FaCode ,FaProductHunt  } from "react-icons/fa";
-import { RiWechatChannelsLine,RiReactjsLine  } from "react-icons/ri";
-import { TbCategory,TbBrandNextjs  } from "react-icons/tb";
-import { MdOutlineWhatshot,MdLiveTv,MdOutlineSportsScore,MdOutlineTheaterComedy     } from "react-icons/md";
+import { FaHome, FaUserAstronaut, FaHistory, FaArrowDown, FaAngleDown, FaCode, FaProductHunt } from "react-icons/fa";
+import { RiWechatChannelsLine, RiReactjsLine } from "react-icons/ri";
+import { TbCategory, TbBrandNextjs } from "react-icons/tb";
+import { MdOutlineWhatshot, MdLiveTv, MdOutlineSportsScore, MdOutlineTheaterComedy } from "react-icons/md";
 import { IoIosMusicalNotes } from "react-icons/io";
 import { SiKnowledgebase } from "react-icons/si";
 import { PiGooglePodcastsLogoBold } from "react-icons/pi";
@@ -20,7 +20,7 @@ import { BsCurrencyBitcoin } from "react-icons/bs";
 
 
 
-function SideBar() {
+function SideBar( {setselectedCategory, selectedCategory} ) {
     //  importing open from usercontext
     const { SetOpen, Open } = useContext(UserContext);
 
@@ -103,20 +103,20 @@ function SideBar() {
         },
         {
             name: "Explore", link: '/', icon: TbCategory, subRoutes: [
-                { name: 'New', icon: <MdOutlineWhatshot  />, },
-                { name: 'Coding', icon: <FaCode  />, },
-                { name: 'ReactJS', icon: <RiReactjsLine  />, },
-                { name: 'NextJS', icon: <TbBrandNextjs  />, },
+                { name: 'New', icon: <MdOutlineWhatshot />, },
+                { name: 'Coding', icon: <FaCode />, },
+                { name: 'ReactJS', icon: <RiReactjsLine />, },
+                { name: 'NextJS', icon: <TbBrandNextjs />, },
                 { name: 'Music', icon: <IoIosMusicalNotes /> },
                 { name: 'Education', icon: <SiKnowledgebase />, },
                 { name: 'Podcast', icon: <PiGooglePodcastsLogoBold />, },
                 { name: 'Movie', icon: <BiSolidCameraMovie />, },
                 { name: 'Gaming', icon: <LuGamepad2 />, },
-                { name: 'Live', icon: <MdLiveTv  />, },
-                { name: 'Sport', icon: <MdOutlineSportsScore  />, },
+                { name: 'Live', icon: <MdLiveTv />, },
+                { name: 'Sport', icon: <MdOutlineSportsScore />, },
                 { name: 'Fashion', icon: <FaProductHunt />, },
-                { name: 'Beauty', icon: <FaProductHunt  />, },
-                { name: 'Comedy', icon: <MdOutlineTheaterComedy  />, },
+                { name: 'Beauty', icon: <FaProductHunt />, },
+                { name: 'Comedy', icon: <MdOutlineTheaterComedy />, },
                 { name: 'Gym', icon: <CgGym />, },
                 { name: 'Crypto', icon: <BsCurrencyBitcoin />, },
             ]
@@ -153,7 +153,7 @@ function SideBar() {
 
 
                     if (menu.subRoutes) {
-                        return <SideBarsub menu={menu} Open={Open} i={i} />
+                        return <SideBarsub menu={menu} Open={Open} i={i} setselectedCategory={setselectedCategory}  />
                         // <div className=' group cursor-pointer flex items-center text-md gap-3.5 font-medium py-2 px-2 pl-3 my-3  hover:bg-gray-900 rounded-md '>
 
 
