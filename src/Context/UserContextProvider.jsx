@@ -3,7 +3,7 @@ import userContext from './UserContext'
 
 const UserContextProvider = ({children}) => {
 
-    const [Open, SetOpen] =useState(false);
+    const [Open, SetOpen] =useState(true);
 
     return(
         <userContext.Provider  value={{Open, SetOpen}}>

@@ -1,11 +1,22 @@
 import React, { createElement, useState, useEffect, useContext } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { FaHome, FaUserAstronaut, FaHistory, FaArrowDown, FaAngleDown } from "react-icons/fa";
-import { RiWechatChannelsLine } from "react-icons/ri";
-import { TbCategory } from "react-icons/tb";
 import UserContext from '../../Context/UserContext';
 import axios from 'axios';
+import SideBarsub from './SideBarsub';
+
+import { FaHome, FaUserAstronaut, FaHistory, FaArrowDown, FaAngleDown,FaCode ,FaProductHunt  } from "react-icons/fa";
+import { RiWechatChannelsLine,RiReactjsLine  } from "react-icons/ri";
+import { TbCategory,TbBrandNextjs  } from "react-icons/tb";
+import { MdOutlineWhatshot,MdLiveTv,MdOutlineSportsScore,MdOutlineTheaterComedy     } from "react-icons/md";
+import { IoIosMusicalNotes } from "react-icons/io";
+import { SiKnowledgebase } from "react-icons/si";
+import { PiGooglePodcastsLogoBold } from "react-icons/pi";
+import { BiSolidCameraMovie } from "react-icons/bi";
+import { LuGamepad2 } from "react-icons/lu";
+import { CgGym } from "react-icons/cg";
+import { BsCurrencyBitcoin } from "react-icons/bs";
+
 
 
 
@@ -90,7 +101,26 @@ function SideBar() {
 
             ]
         },
-        { name: "Explore", link: '/', icon: TbCategory },
+        {
+            name: "Explore", link: '/', icon: TbCategory, subRoutes: [
+                { name: 'New', icon: <MdOutlineWhatshot  />, },
+                { name: 'Coding', icon: <FaCode  />, },
+                { name: 'ReactJS', icon: <RiReactjsLine  />, },
+                { name: 'NextJS', icon: <TbBrandNextjs  />, },
+                { name: 'Music', icon: <IoIosMusicalNotes /> },
+                { name: 'Education', icon: <SiKnowledgebase />, },
+                { name: 'Podcast', icon: <PiGooglePodcastsLogoBold />, },
+                { name: 'Movie', icon: <BiSolidCameraMovie />, },
+                { name: 'Gaming', icon: <LuGamepad2 />, },
+                { name: 'Live', icon: <MdLiveTv  />, },
+                { name: 'Sport', icon: <MdOutlineSportsScore  />, },
+                { name: 'Fashion', icon: <FaProductHunt />, },
+                { name: 'Beauty', icon: <FaProductHunt  />, },
+                { name: 'Comedy', icon: <MdOutlineTheaterComedy  />, },
+                { name: 'Gym', icon: <CgGym />, },
+                { name: 'Crypto', icon: <BsCurrencyBitcoin />, },
+            ]
+        },
 
     ];
 
@@ -117,40 +147,41 @@ function SideBar() {
 
 
 
-            {/* mapping menus */}
+            {/* mapping menu */}
             {
                 menu?.map((menu, i) => {
 
 
                     if (menu.subRoutes) {
-                        return <div className=' group cursor-pointer flex items-center text-md gap-3 font-medium py-2 px-2 pl-3 my-3  hover:bg-gray-900 rounded-md '>
+                        return <SideBarsub menu={menu} Open={Open} i={i} />
+                        // <div className=' group cursor-pointer flex items-center text-md gap-3.5 font-medium py-2 px-2 pl-3 my-3  hover:bg-gray-900 rounded-md '>
 
 
-                            <div>{React.createElement(menu.icon, { size: "20" })}</div>
+                        //     <div>{React.createElement(menu.icon, { size: "20" })}</div>
 
-                            <h2
-                                style={{
-                                    transitionDelay: `${i + 3}00ms`
-                                }}
-                                className={`whitespace-pre duration-500 ${!Open && 'opacity-0 translate-x-28 overflow-hidden '} `}>{menu.name}
+                        //     <h2
+                        //         style={{
+                        //             transitionDelay: `${i + 3}00ms`
+                        //         }}
+                        //         className={`whitespace-pre duration-500 ${!Open && 'opacity-0 translate-x-28 overflow-hidden '} `}>{menu.name}
 
-                            </h2>
+                        //     </h2>
 
-                            <div style={{
-                                transitionDelay: `${i + 3}00ms`
-                            }}
-                                className={`whitespace-pre duration-500 ${!Open && 'opacity-0 translate-x-28 overflow-hidden '} `}>
-                                <FaAngleDown />
-                            </div>
-
-
-
-                            <h2 className={` ${Open && "hidden"}   absolute left-48 bg-white font-semibold whitespace-pre text-gray-900 rounded-md drop-shadow-lg px-0 py-0 w-0 overflow-hidden group-hover:px-2 group-hover:py-1 group-hover:left-20 group-hover:duration-100 group-hover:w-fit`}>
-                                {menu.name}
-                            </h2>
+                        //     <div style={{
+                        //         transitionDelay: `${i + 3}00ms`
+                        //     }}
+                        //         className={`whitespace-pre duration-500 ${!Open && 'opacity-0 translate-x-28 overflow-hidden '} `}>
+                        //         <FaAngleDown />
+                        //     </div>
 
 
-                        </div>
+
+                        //     <h2 className={` ${Open && "hidden"}   absolute left-48 bg-white font-semibold whitespace-pre text-gray-900 rounded-md drop-shadow-lg px-0 py-0 w-0 overflow-hidden group-hover:px-2 group-hover:py-1 group-hover:left-20 group-hover:duration-100 group-hover:w-fit`}>
+                        //         {menu.name}
+                        //     </h2>
+
+
+                        // </div>
 
                     }
 
