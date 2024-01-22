@@ -14,7 +14,7 @@ function VideoDetail() {
           <div className="absolute -inset-1 bg-gradient-to-r from-pink-600 to-purple-600 blur opacity-75 hover:opacity-100 transition duration-200 "></div>
 
           <div className=' relative bg-black  h-[100%] w-full flex items-start justify-center p-2 rounded-xl '>
-            video section
+            <ReactPlayer  />
           </div>
 
         </div>
