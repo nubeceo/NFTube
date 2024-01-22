@@ -1,4 +1,4 @@
-import React, { createElement, useState, useEffect, useContext } from 'react'
+import React, { createElement, useState, useEffect, useContext, useCallback } from 'react'
 import { FaHome, FaUserAstronaut, FaHistory, FaArrowDown, FaAngleDown } from "react-icons/fa";
 
 
@@ -10,11 +10,13 @@ function SideBarsub({ menu, Open, i, setselectedCategory, fetchData }) {
 
 
     // calling setselectedCategory and fetchData  fucntion at a time
-    const functionCallingFucntion = (subRouteName) => {
-        setselectedCategory(subRouteName);
-        fetchData();
-    }
 
+    // const functionCallingFucntion = (subRouteName) => {
+    //     setselectedCategory(subRouteName);
+    //     fetchData();
+    // }
+
+    
 
 
     return (
@@ -61,7 +63,7 @@ function SideBarsub({ menu, Open, i, setselectedCategory, fetchData }) {
                 {menu?.subRoutes?.map((subRoutes, i) => (
                     <li key={subRoutes?.name}
                         className='flex items-center gap-2 py-2 px-8 hover:bg-red-600 rounded-md'
-                        onClick={() => functionCallingFucntion(subRoutes?.name)}
+                        onClick={() => setselectedCategory(subRoutes?.name)}
                     >
 
                         {/* for icon/profile pic */}

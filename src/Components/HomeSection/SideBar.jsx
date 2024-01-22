@@ -20,7 +20,7 @@ import { BsCurrencyBitcoin } from "react-icons/bs";
 
 
 
-function SideBar( {setselectedCategory, selectedCategory, fetchData} ) {
+function SideBar({ setselectedCategory, selectedCategory,  }) {
 
     //  importing open from and SetOpen usercontext
     const { SetOpen, Open } = useContext(UserContext);
@@ -154,7 +154,13 @@ function SideBar( {setselectedCategory, selectedCategory, fetchData} ) {
 
                     // rendering menus which have submenus
                     if (menu.subRoutes) {
-                        return <SideBarsub menu={menu} Open={Open} i={i} setselectedCategory={setselectedCategory} fetchData={fetchData} />
+                        return <SideBarsub
+                            menu={menu}
+                            Open={Open}
+                            i={i}
+                            setselectedCategory={setselectedCategory}
+                            // fetchData={fetchData}
+                        />
                         // <div className=' group cursor-pointer flex items-center text-md gap-3.5 font-medium py-2 px-2 pl-3 my-3  hover:bg-gray-900 rounded-md '>
 
 

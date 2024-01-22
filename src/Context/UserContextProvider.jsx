@@ -4,9 +4,12 @@ import userContext from './UserContext'
 const UserContextProvider = ({children}) => {
 
     const [Open, SetOpen] =useState(true);
+    const [searchValue, setSearchValue] = useState('');
+    const [selectedCategory, setselectedCategory] = useState('New');
+
 
     return(
-        <userContext.Provider  value={{Open, SetOpen}}>
+        <userContext.Provider  value={{Open, SetOpen, searchValue, setSearchValue,selectedCategory, setselectedCategory}}>
             {children}
         </userContext.Provider>
     );

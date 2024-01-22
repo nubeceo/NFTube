@@ -1,11 +1,24 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { FaSearch } from 'react-icons/fa'
 import network from './assets/network.gif'
 import UserContext from './Context/UserContext'
+import userContext from './Context/UserContext'
 
 function Header() {
 
-  const { SetOpen, Open } = useContext(UserContext);
+  const { SetOpen, Open,searchValue, setSearchValue ,selectedCategory, setselectedCategory} = useContext(UserContext);
+
+
+  const [localStoreValue, setlocalStoreValue] = useState('');
+
+  // const setSearchvalueData =()=>{
+
+  //   setselectedCategory(localStoreValue);
+  //   // console.log("this is the actual data:", searchValue)
+  // }
+
+  
+
 
   return (
     <nav className='text-white sticky w-full h-11 flex items-center top-0 justify-between bg-black'>
@@ -32,17 +45,28 @@ function Header() {
 
 
       {/* search bar div */}
-      <div className=' m-6 lg:w-80 w-50 cursor-pointer'>
+      <div className=' m-6 lg:w-80 flex items-center w-50 cursor-pointer'>
 
         <div className='h-7 flex items-center bg-white w-full border rounded-2xl'>
 
-          <FaSearch className='mx-2  font-light font-sm text-red-600 ' />
+          <FaSearch className='mx-2  font-light font-sm text-red-600 duration-500 hover:scale-[0.85] hover:text-green-600 '
+          onClick={()=>setSearchvalueData()}
+          />
 
-          <input className='border-none w-full h-full bg-transparent font-mono text-sm text-slate-900 focus:outline-none' type="text" placeholder='Search' />
+          <input className='border-none w-full h-full px-3 bg-transparent font-mono text-sm text-slate-900 focus:outline-none'
+            type="text"
+            placeholder='Search'
+            value={localStoreValue}
+            onChange={(e) => setlocalStoreValue(e.target.value)}
+
+
+          />
 
         </div>
 
+
       </div>
+
 
 
 

@@ -3,7 +3,9 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
-import { Home, } from './Components/Exporter.js'
+import { Home,VideolDetail } from './Components/Exporter.js'
+import UserContextProvider from './Context/UserContextProvider'
+
 
 
 
@@ -12,6 +14,7 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<App />} >
       <Route path='/' element={<Home />} />
+      <Route path='/video' element={<VideolDetail />} />
     </Route>
   )
 )
@@ -19,7 +22,7 @@ const router = createBrowserRouter(
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  <UserContextProvider  >
     <RouterProvider router={router} />
-  </React.StrictMode>
+  </UserContextProvider>
 )

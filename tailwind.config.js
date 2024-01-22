@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       width: {
-        'custom': '92%', // Add your custom width value
+        'custom': '95%', // Add your custom width value
       },
     },
   },
