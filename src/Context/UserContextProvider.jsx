@@ -5,7 +5,7 @@ const UserContextProvider = ({children}) => {
 
     const [Open, SetOpen] =useState(true);
     const [searchValue, setSearchValue] = useState('');
-    const [selectedCategory, setselectedCategory] = useState('New');
+    const [selectedCategory, setselectedCategory] = useState('Coding');
 
 
     return(

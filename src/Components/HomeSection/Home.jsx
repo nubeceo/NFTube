@@ -36,7 +36,7 @@ function Home() {
    
     const fetchData = async () => {
       try {
-        const response = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=30&q=${selectedCategory}&key=${API_KEY_BACKUP_ONE}`);
+        const response = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=30&q=${selectedCategory}&key=${EMPTY_API}`);
         if (!response.ok) {
           throw new Error('Network request failed');
         }

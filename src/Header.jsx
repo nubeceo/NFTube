@@ -11,11 +11,11 @@ function Header() {
 
   const [localStoreValue, setlocalStoreValue] = useState('');
 
-  // const setSearchvalueData =()=>{
+  const setSearchvalueData =()=>{
 
-  //   setselectedCategory(localStoreValue);
-  //   // console.log("this is the actual data:", searchValue)
-  // }
+    setselectedCategory(localStoreValue);
+    // console.log("this is the actual data:", searchValue)
+  }
 
   
 

@@ -9,6 +9,10 @@ export default {
       width: {
         'custom': '95%', // Add your custom width value
       },
+      backgroundColor:{
+        'customBg' :' rgb(6, 6, 6)'
+      },
+      
     },
   },
   plugins: [],
