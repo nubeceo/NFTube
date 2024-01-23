@@ -36,7 +36,7 @@ function Home() {
    
     const fetchData = async () => {
       try {
-        const response = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=30&q=${selectedCategory}&key=${EMPTY_API}`);
+        const response = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=30&q=${selectedCategory}&key=${API_KEY}`);
         if (!response.ok) {
           throw new Error('Network request failed');
         }
@@ -48,16 +48,13 @@ function Home() {
         console.log(error);
       }
 
-      // fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=30&q=${selectedCategory}&key=${EMPTY_API}`)
-      //   .then((res)=>res.json())
-      //   .then((data) => setvideos(data.items))
 
     };
 
 
 
 
-    return () => fetchData();
+    // return () => fetchData();
 
   }, [selectedCategory]);
 
