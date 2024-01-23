@@ -14,24 +14,25 @@
 
 /* itializing some global Css  */
 body {
-    background-color:  rgba(10, 10, 10, 0.993);
+    background-color: rgba(10, 10, 10, 0.993);
     margin: 0;
     padding: 0;
-    
+
     color: #fff;
     font-family: 'Poppins', sans-serif;
-    
+
 }
 
 ::-webkit-scrollbar {
     width: 4px;
 }
+
 ::-webkit-scrollbar-thumb {
     background: linear-gradient(transparent, #ff000d);
-    border-radius:1px;
+    border-radius: 1px;
 }
 
-::-webkit-scrollbar-thumb:hover{
+::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(transparent, #00c6ff);
 }
 

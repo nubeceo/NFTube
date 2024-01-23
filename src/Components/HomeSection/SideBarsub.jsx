@@ -20,11 +20,11 @@ function SideBarsub({ menu, Open, i, setselectedCategory, fetchData }) {
 
 
     return (
-        <div className='hover:bg-gray-900 rounded-md '>
+        <div className='hover:bg-gray-900 rounded-md pt-3 lg:pt-0  '>
 
 
             {/* render the menu option which has sublist */}
-            <div className=' group cursor-pointer flex items-center text-md gap-3.5 font-medium  px-2 pl-3 my-3  hover:bg-gray-900 rounded-md'
+            <div className=' group cursor-pointer hidden lg:flex items-center text-md gap-3.5 font-medium  px-2 pl-3 my-3  hover:bg-gray-900 rounded-md '
                 onClick={() => SetMenuOpen(!menuOpen)}
             >
 
@@ -59,7 +59,7 @@ function SideBarsub({ menu, Open, i, setselectedCategory, fetchData }) {
 
 
             {/* render the sidebar menu's : sub lists */}
-            <ul className={`cursor-pointer  items-center text-sm gap-3.5 font-medium  px-2 pl-3 my-3  rounded-md overflow-y-auto  ${menuOpen ? 'max-h-40' : 'max-h-0'}  duration-500`}>
+            <ul className={`  cursor-pointer  items-center text-sm gap-3.5 font-medium  px-2 pl-3 my-3  rounded-md overflow-y-auto  ${menuOpen ? 'max-h-40' : 'max-h-0'}  duration-500`}>
                 {menu?.subRoutes?.map((subRoutes, i) => (
                     <li key={subRoutes?.name}
                         className='flex items-center gap-2 py-2 px-8 hover:bg-red-600 rounded-md'

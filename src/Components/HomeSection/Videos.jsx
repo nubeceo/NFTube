@@ -9,17 +9,15 @@ const Videos = ({ selectedCategory, videos }) => {
 
   const { Open } = useContext(UserContext);
 
-
-  console.log(videos);
   return (
-    <div>
+    <div className=''>
 
       {/* selected category */}
-      <div className=''>{selectedCategory} <span className='text-red-600 '>NFTs</span></div>
+      <div className=' py-2 pl-10 lg:pl-0'>{selectedCategory} <span className='text-red-600 '>NFTs</span></div>
 
 
       {/* importing video card to set video feed */}
-      <div className={` h-full p-6 flex flex-wrap group justify-center ${Open? 'gap-10': 'gap-5'}  `}>
+      <div className={` h-full lg:p-6 flex flex-wrap group justify-center ${Open? 'gap-10': 'gap-5'}  `}>
 
         {/* <VideoCard/>
         <VideoCard/>

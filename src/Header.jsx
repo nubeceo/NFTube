@@ -45,7 +45,7 @@ function Header() {
 
 
       {/* search bar div */}
-      <div className=' m-6 lg:w-80 flex items-center w-50 cursor-pointer'>
+      <div className=' m-6 w-50 lg:w-80 flex items-center  cursor-pointer'>
 
         <div className='h-7 flex items-center bg-white w-full border rounded-2xl'>
 
@@ -72,7 +72,7 @@ function Header() {
 
 
       {/* third div */}
-      <div className='invisible lg:visible mr-6 flex items-center cursor-pointer'>
+      <div className='hidden lg:flex mr-6  items-center cursor-pointer'>
 
         <img width="25" height="25" className='mr-2' src={network} />
 

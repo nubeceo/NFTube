@@ -6,8 +6,6 @@ function VideoDetail() {
 
   const EMPTY_API = "";
   const API_KEY = import.meta.env.VITE_REACT_APP_YOUTUBE_API_KEY;
-  const API_KEY_BACKUP_ONE = import.meta.env.VITE_REACT_APP_YOUTUBE_API_KEY_BACKUP_ONE;
-  const API_KEY_BACKUP_TWO = import.meta.env.VITE_REACT_APP_YOUTUBE_API_KEY_BACKUP_TWO;
 
 
 
@@ -38,7 +36,7 @@ function VideoDetail() {
       }
     };
 
-    // fetchData();
+    fetchData();
 
     
   }, [id])
