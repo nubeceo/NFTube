@@ -22,8 +22,6 @@ function VideoDetail() {
 
   useEffect(() => {
 
-
-
     const fetchData = async () => {
       try {
         const response = await fetch(`https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${id}&key=${API_KEY}`);
@@ -45,9 +43,9 @@ function VideoDetail() {
     
   }, [id])
 
-
+  // to filter data of video uploaded from timestamp
   function formatDate(timestamp) {
-    if (!timestamp) return ''; // Handle case where timestamp is undefined
+    if (!timestamp) return ''; 
 
     const date = new Date(timestamp);
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
@@ -59,9 +57,10 @@ function VideoDetail() {
 
 
 
-    <div className=' bg-customBg  flex items-center justify-center w-full h-[100vh] p-6'>
+    <div className='  flex  flex-col xl:flex-row  bg-customBg  items-center justify-center w-full  h-full xl:h-[100vh] sm:px-1 sm:py-4 md:p-2 lg:p-6'>
 
-      <div className='  h-full w-[70%] flex items-center justify-center py-2 px-8'>
+
+      <div className=' h-[370px] md:h-[510px] lg:h-[740px]  xl:h-full   w-[100%]  xl:w-[70%] flex items-center justify-center py-10 md:py-2 md:px-8'>
 
         <div className=" h-[80%] w-[90%] relative cursor-pointer">
 
@@ -82,10 +81,11 @@ function VideoDetail() {
 
 
 
-      <div className='  h-full w-[30%] flex items-center justify-center py-2 px-4 '>
+      <div className=' h-[500px] md:h-[30%] xl:h-full w-[90%] xl:w-[30%] flex items-center justify-center py-2 md:px-4 '>
+        
         <div className="h-[80%] relative w-full">
-          <div className="absolute -inset-1 bg-gradient-to-r  from-pink-600 to-purple-600 blur opacity-75 hover:opacity-100 transition duration-200 "></div>
 
+          <div className="absolute -inset-1 bg-gradient-to-r  from-pink-600 to-purple-600 blur opacity-75 hover:opacity-100 transition duration-200 "></div>
 
           <div className='relative bg-black  h-[100%] w-full  items-center rounded-lg justify-start flex flex-col font-mono'>
 
@@ -95,8 +95,8 @@ function VideoDetail() {
               <h2 className="text-white text-md">{videoDetail?.snippet?.title}</h2>
             </div>
 
-            <div className="p-5 max-h-[320px] overflow-auto mb-5">
-              <p className="text-gray-400 text-sm ">{videoDetail?.snippet?.localized.description}</p>
+            <div className="p-5 max-h-[320px] overflow-auto mb-5" style={{ maxWidth: '100%', overflow: 'auto' }}>
+              <p className="text-gray-400 text-sm " style={{ wordWrap: 'break-word' }}>{videoDetail?.snippet?.localized.description}</p>
             </div>
             {/* {videoDetail?.snippet.channelTitle}  */}
             <div>
@@ -105,7 +105,10 @@ function VideoDetail() {
             </div>
 
           </div>
+
+
         </div>
+
       </div>
 
 
