@@ -40,7 +40,7 @@ function Home() {
         }
         const result = await response.json();
         setvideos(result.items);
-
+        console.log(videos);
         setselectedCategory("");
       } catch (error) {
         console.log(error);
