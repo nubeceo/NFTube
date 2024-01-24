@@ -14,7 +14,7 @@ function Home() {
   const [videos, setvideos] = useState([]);
 
   // state to set feed topic for first time screen load
-  const [topicOnLoad, settopicOnLoad] = useState('Open Source');
+  const [topicOnLoad, settopicOnLoad] = useState('george hotz archive');
 
 
 
