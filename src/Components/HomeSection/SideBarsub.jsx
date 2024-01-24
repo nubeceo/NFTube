@@ -8,17 +8,6 @@ function SideBarsub({ menu, Open, i, setselectedCategory, fetchData }) {
     const [menuOpen, SetMenuOpen] = useState(false);
 
 
-
-    // calling setselectedCategory and fetchData  fucntion at a time
-
-    // const functionCallingFucntion = (subRouteName) => {
-    //     setselectedCategory(subRouteName);
-    //     fetchData();
-    // }
-
-    
-
-
     return (
         <div className='hover:bg-gray-900 rounded-md pt-3 lg:pt-0  '>
 

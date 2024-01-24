@@ -22,8 +22,8 @@ import { BsCurrencyBitcoin } from "react-icons/bs";
 
 function SideBar({ setselectedCategory, selectedCategory, }) {
 
-    //  importing open from and SetOpen usercontext
-    const { SetOpen, Open } = useContext(UserContext);
+    //  importing open from usercontext
+    const { Open } = useContext(UserContext);
 
 
     // menu array
@@ -126,24 +126,8 @@ function SideBar({ setselectedCategory, selectedCategory, }) {
     ];
 
 
-    
-
     return (
         <div className={`bg-black text-white justify-center flex-wrap  lg:justify-start w-full h-full py-2 px-36 lg:p-6 flex flex-col`}>
-
-            {/* home tab */}
-            {/* <div className="p-6 flex items-center justify-start">
-
-                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 50 50" style={{ fill: '#FFFFFF' }} className="mr-2">
-                    <path d="M 25 1.0507812 C 24.7825 1.0507812 24.565859 1.1197656 24.380859 1.2597656 L 1.3808594 19.210938 C 0.95085938 19.550938 0.8709375 20.179141 1.2109375 20.619141 C 1.5509375 21.049141 2.1791406 21.129062 2.6191406 20.789062 L 4 19.710938 L 4 46 C 4 46.55 4.45 47 5 47 L 19 47 L 19 29 L 31 29 L 31 47 L 45 47 C 45.55 47 46 46.55 46 46 L 46 19.710938 L 47.380859 20.789062 C 47.570859 20.929063 47.78 21 48 21 C 48.3 21 48.589063 20.869141 48.789062 20.619141 C 49.129063 20.179141 49.049141 19.550938 48.619141 19.210938 L 25.619141 1.2597656 C 25.434141 1.1197656 25.2175 1.0507812 25 1.0507812 z M 35 5 L 35 6.0507812 L 41 10.730469 L 41 5 L 35 5 z"></path>
-                </svg>
-
-
-                <Link to={"/"}>
-                    <h1 className="font-mono font-bold hover:text-gray-300">HOME</h1>
-                </Link>
-
-            </div> */}
 
 
 
@@ -152,42 +136,14 @@ function SideBar({ setselectedCategory, selectedCategory, }) {
                 menu?.map((menu, i) => {
 
                     // rendering menus which have submenus
-                    if (menu.subRoutes ) {
+                    if (menu.subRoutes) {
                         return <SideBarsub
                             menu={menu}
                             Open={Open}
                             i={i}
                             setselectedCategory={setselectedCategory}
-                        // fetchData={fetchData}
                         />
-                        // <div className=' group cursor-pointer flex items-center text-md gap-3.5 font-medium py-2 px-2 pl-3 my-3  hover:bg-gray-900 rounded-md '>
 
-
-                        //     <div>{React.createElement(menu.icon, { size: "20" })}</div>
-
-                        //     <h2
-                        //         style={{
-                        //             transitionDelay: `${i + 3}00ms`
-                        //         }}
-                        //         className={`whitespace-pre duration-500 ${!Open && 'opacity-0 translate-x-28 overflow-hidden '} `}>{menu.name}
-
-                        //     </h2>
-
-                        //     <div style={{
-                        //         transitionDelay: `${i + 3}00ms`
-                        //     }}
-                        //         className={`whitespace-pre duration-500 ${!Open && 'opacity-0 translate-x-28 overflow-hidden '} `}>
-                        //         <FaAngleDown />
-                        //     </div>
-
-
-
-                        //     <h2 className={` ${Open && "hidden"}   absolute left-48 bg-white font-semibold whitespace-pre text-gray-900 rounded-md drop-shadow-lg px-0 py-0 w-0 overflow-hidden group-hover:px-2 group-hover:py-1 group-hover:left-20 group-hover:duration-100 group-hover:w-fit`}>
-                        //         {menu.name}
-                        //     </h2>
-
-
-                        // </div>
 
                     }
 

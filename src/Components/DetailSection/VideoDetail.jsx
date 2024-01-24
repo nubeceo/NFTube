@@ -8,16 +8,15 @@ function VideoDetail() {
   const API_KEY = import.meta.env.VITE_REACT_APP_YOUTUBE_API_KEY;
 
 
-
+  // state for setting data for the pertivular cideo for the videos detail page 
   const [videoDetail, setvideoDetail] = useState(null);
 
+
+  // capturing the vieo id from link params
   const { id } = useParams();
 
 
-  // https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${id}&key=${API_KEY_BACKUP_ONE} 
-
-
-
+  // fucntion to fetch the specific video data
   useEffect(() => {
 
     const fetchData = async () => {
@@ -38,12 +37,12 @@ function VideoDetail() {
 
     fetchData();
 
-    
+
   }, [id])
 
   // to filter data of video uploaded from timestamp
   function formatDate(timestamp) {
-    if (!timestamp) return ''; 
+    if (!timestamp) return '';
 
     const date = new Date(timestamp);
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
@@ -80,7 +79,7 @@ function VideoDetail() {
 
 
       <div className=' h-[500px] md:h-[30%] xl:h-full w-[90%] xl:w-[30%] flex items-center justify-center py-2 md:px-4 '>
-        
+
         <div className="h-[80%] relative w-full">
 
           <div className="absolute -inset-1 bg-gradient-to-r  from-pink-600 to-purple-600 blur opacity-75 hover:opacity-100 transition duration-200 "></div>

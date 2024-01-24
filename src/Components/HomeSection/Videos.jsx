@@ -19,15 +19,8 @@ const Videos = ({ selectedCategory, videos }) => {
       {/* importing video card to set video feed */}
       <div className={` h-full lg:p-6 flex flex-wrap group justify-center ${Open? 'gap-10': 'gap-5'}  `}>
 
-        {/* <VideoCard/>
-        <VideoCard/>
-        <VideoCard/>
-        <VideoCard/>
-        <VideoCard/>
-        <VideoCard/> */}
 
-        {/* <ChannelCard /> */}
-
+        
         {videos?.map((item, index) => (
           <div key={index}  className={``}>
 
