@@ -21,6 +21,7 @@ function Home() {
   // const [selectedCategory, setselectedCategory] = useState('New');
 
   const [videos, setvideos] = useState([]);
+  const [topicOnLoad, settopicOnLoad] = useState('TypeScript');
 
   // fetching feed on screen load
 
@@ -56,6 +57,33 @@ function Home() {
 
   }, [selectedCategory]);
 
+
+
+// fucntion to load the first time data
+  useEffect(() => {
+
+    const onLoadFetchData = async () => {
+      try {
+        const response = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=30&q=${topicOnLoad}&key=${API_KEY}`);
+        if (!response.ok) {
+          throw new Error('Network request failed');
+        }
+        const result = await response.json();
+        setvideos(result.items);
+        console.log(videos);
+      } catch (error) {
+        console.log(error);
+      }
+
+
+    };
+
+
+
+
+    onLoadFetchData();
+
+  }, []);
 
 
 
