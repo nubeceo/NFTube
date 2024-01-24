@@ -21,7 +21,7 @@ function Home() {
   // const [selectedCategory, setselectedCategory] = useState('New');
 
   const [videos, setvideos] = useState([]);
-  const [topicOnLoad, settopicOnLoad] = useState('TypeScript');
+  const [topicOnLoad, settopicOnLoad] = useState('Open Source');
 
   // fetching feed on screen load
 
