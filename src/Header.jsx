@@ -3,6 +3,7 @@ import { FaSearch } from 'react-icons/fa'
 import network from './assets/network.gif'
 import UserContext from './Context/UserContext'
 import userContext from './Context/UserContext'
+import { Link } from 'react-router-dom'
 
 function Header() {
 
@@ -36,9 +37,11 @@ function Header() {
 
 
         {/* logo */}
+        <Link to="/">
         <div>
           <h1 className='text-red-600 font-bold font-mono text-xl'>NFT<span className='text-white'>ube</span></h1>
         </div>
+        </Link>
 
       </div>
 
