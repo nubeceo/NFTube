@@ -29,7 +29,7 @@ Welcome to NFTube, a stunning YouTube clone crafted with Vite, React, React Rout
 
 4. **Run the Application:**
    ```bash
-   npm start
+   npm run dev
    ```
 
 ## Technologies Used
